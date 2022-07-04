@@ -8,7 +8,7 @@
     "node": ">=16.0.0"
   },
   "prototype": {
-    "serviceName": "Your service name",
+    "serviceName": "Teacher Online Self-serve",
     "defaultRigLayout": "layouts/default.html"
   },
   "stylelint": {
