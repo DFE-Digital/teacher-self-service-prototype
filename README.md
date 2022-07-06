@@ -1,8 +1,10 @@
-# GOV.UK Prototype Rig template
+# Teacher self-serve prototype
 
-A template prototype, built using the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com).
+Prototype: https://teacher-self-serve-prototype.herokuapp.com/
 
-Use this repository as a template.
+Design history: https://tra-digital-design-history.herokuapp.com/
+
+Built using the [GOV.UK Prototype Rig](https://govuk-prototype-rig.herokuapp.com).
 
 ## Requirements
 
