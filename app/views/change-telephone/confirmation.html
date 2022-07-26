@@ -5,9 +5,9 @@
 
 {% block content %}
 {% set html %}
-<p class="app-!-inherit-colour govuk-!-margin-bottom-0">
-  We have sent you a confirmation email.
-</p>
+  <p class="app-!-inherit-colour govuk-!-margin-bottom-0">
+    <a class="app-hidden-link govuk-!-font-size-24" href="../email/email-auto-confirmation">We have sent you a confirmation email.</a>
+  </p>
 {% endset %}
 
   <div class="govuk-grid-row">
@@ -17,8 +17,6 @@
         html: html,
         classes: 'govuk-!-margin-bottom-6'
       }) }}
-
-
       {{ govukButton({
         text: "Back to your account overview",
         href: "../"
