@@ -1,0 +1,69 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Change your name" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" novalidate>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Update your name",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <p>We will need evidence of your change of name. Any changes can take up to five days to appear on your account.</p>
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "first-name",
+          name: "first-name",
+          value: "Sarah"
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "last-name",
+          name: "last name",
+          value: "Jones"
+        }) }}
+        {{ govukFileUpload({
+          id: "file-upload-1",
+          name: "file-upload-1",
+          label: {
+            text: "Upload your evidence"
+          }
+        }) }}
+        {{ govukDetails({
+          summaryText: "Evidence we accept",
+          html: '
+          <ul class="govuk-list govuk-list--bullet">
+            <li>marriage: copy of your marriage certificate</li>
+            <li>civil partnership: copy of your civil agreement certificate</li>
+            <li>divorce: copy of your decree absolute and your birth certificate</li>
+            <li>statutory declaration: copy of the statutory declaration</li>
+            <li>deed poll: copy of your deed poll</li>
+          </ul>
+          '
+        }) }}    
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Update date of birth",
+          href: "confirmation"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Change your national insurance number" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" novalidate>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Update your national insurance",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <p>We have hidden part of your national insurance number to protect your data.</p>
+  
+        {{ govukInput({
+          classes: "govuk-input--width-10",
+          id: "national-insurance",
+          name: "national-insurance",
+          value: "JL*****B"
+        }) }} 
+
+        
+        
+         
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Update national insurance number",
+          href: "confirmation"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

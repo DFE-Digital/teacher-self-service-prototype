@@ -1,0 +1,49 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Change your date of birth" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" novalidate>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Update your telephone number",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <p>We have hidden part of your phone number to protect your data.</p>
+  
+        {{ govukInput({
+       
+          hint: {
+            text: "For international numbers include the country code"
+          },
+          id: "telephone-number",
+          name: "telephone-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20",
+          value: "07******47"
+        }) }}
+
+        
+        
+         
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Update telephone number",
+          href: "confirmation"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

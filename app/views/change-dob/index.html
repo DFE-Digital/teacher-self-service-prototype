@@ -1,0 +1,81 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Change your date of birth" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" novalidate>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Update your date of birth",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <p>We will need evidence of your any changes to your date of birth. Any changes can take up to five days to appear on your account.</p>
+        {{ govukDateInput({
+          id: "dob",
+          namePrefix: "date-of-birth",
+          fieldset: {
+            legend: {
+              isPageHeading: false
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          items: [
+            {
+              classes: "govuk-input--width-2 ",
+              name: "day",
+              value: "1"
+            },
+            {
+              classes: "govuk-input--width-2 ",
+              name: "month",
+              value: "1"
+            },
+            {
+              classes: "govuk-input--width-4 ",
+              name: "year",
+              value: "1980"
+            }
+          ]
+        }) }}
+
+
+        {{ govukFileUpload({
+          id: "file-upload-1",
+          name: "file-upload-1",
+          label: {
+            text: "Upload your evidence"
+          }
+        }) }}
+        {{ govukDetails({
+          summaryText: "Evidence we accept",
+          html: '
+          <ul class="govuk-list govuk-list--bullet">
+            <li>birth certificate</li>
+            <li>passport</li>
+            <li>driving licence</li>
+            
+          </ul>
+          '
+        }) }}    
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Update name",
+          href: "confirmation"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

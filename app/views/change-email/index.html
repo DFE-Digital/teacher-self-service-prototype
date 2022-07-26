@@ -1,0 +1,48 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Change your email address" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form method="post" novalidate>
+
+        {% call govukFieldset({
+          legend: {
+            text: "Update your email address",
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <p>We have hidden part of your email address to protect your data.</p>
+  
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          id: "email",
+          name: "email",
+          type: "email",
+          autocomplete: "email",
+   
+          spellcheck: false
+        }) }}
+
+        
+        
+         
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Update email address",
+          href: "confirmation"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
