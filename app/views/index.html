@@ -1,5 +1,5 @@
 {% extends "layouts/default.html" %}
-{% block pageTitle %}Prototype{% endblock %}
+{% block pageTitle %}{{ serviceName }}{% endblock %}
 
 {% block header %}
   {{ govukHeader({
@@ -13,7 +13,7 @@
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds-from-desktop">
           <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-3">
-            Teacher self-service
+            {{ serviceName }}
           </h1>
         </div>
       </div>
@@ -28,7 +28,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <p class="govuk-heading-s">The screens and journeys for the teacher self-serve experience</p>
+      <p class="govuk-heading-s">The screens and journeys for the  {{ serviceName }} experience</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>Dashboard</li>
@@ -36,7 +36,7 @@
         <li><a href="change-dob/index">Change date of birth</a></li>
         <li><a href="change-telephone/index">Change phone number</a></li>
         <li><a href="change-email/index">Change email address</a></li>
-        <li><a href="change-national-insurance/index">Change National insurance number</a></li>
+        <li><a href="change-national-insurance/index">Change National Insurance number</a></li>
       </ul>
  
     </div>

@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Change your date of birth" %}
+{% set title = "Change your telephone number" %}
 
 {% block pageNavigation %}
 {% include "includes/back.html" %}
@@ -14,7 +14,7 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Update your telephone number",
+            text: title,
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }

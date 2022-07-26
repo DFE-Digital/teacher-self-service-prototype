@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Change your national insurance number" %}
+{% set title = "Change your National Insurance number" %}
 
 {% block pageNavigation %}
 {% include "includes/back.html" %}
@@ -14,12 +14,12 @@
 
         {% call govukFieldset({
           legend: {
-            text: "Update your national insurance",
+            text: title,
             classes: "govuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-        <p>We have hidden part of your national insurance number to protect your data.</p>
+        <p>We have hidden part of your National Insurance number to protect your data.</p>
   
         {{ govukInput({
           classes: "govuk-input--width-10",
@@ -34,7 +34,7 @@
         {% endcall %}
 
         {{ govukButton({
-          text: "Update national insurance number",
+          text: "Update National Insurance number",
           href: "confirmation"
         }) }}
       </form>
