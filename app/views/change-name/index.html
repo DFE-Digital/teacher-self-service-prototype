@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Change your name" %}
+{% set title = "Update your name" %}
 
 {% block pageNavigation %}
 {% include "includes/back.html" %}
@@ -19,10 +19,25 @@
             isPageHeading: true
           }
         }) %}
-        <p>We will need evidence of your change of name. Any changes can take up to five days to appear on your account.</p>
+       
+        <p>If you’ve changed your name, you’ll need to provide evidence to update it. </p>
+
+        <p>Your evidence must be in pdf or jpeg format and be a scan of 1 of the following:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>marriage certificate</li>
+            <li>civil partnership certificate</li>
+            <li>decree absolute and birth certificate</li>
+            <li>statutory declaration</li>
+            <li>deed poll</li>
+            
+          </ul>
+       
         {{ govukInput({
           label: {
             text: "First name"
+          },          
+          hint: {
+            text: "first or given names"
           },
           classes: "govuk-!-width-two-thirds",
           id: "first-name",
@@ -32,6 +47,9 @@
         {{ govukInput({
           label: {
             text: "Last name"
+          },          
+          hint: {
+            text: "Last or family name"
           },
           classes: "govuk-!-width-two-thirds",
           id: "last-name",
@@ -45,18 +63,7 @@
             text: "Upload your evidence"
           }
         }) }}
-        {{ govukDetails({
-          summaryText: "Evidence we accept",
-          html: '
-          <ul class="govuk-list govuk-list--bullet">
-            <li>marriage: copy of your marriage certificate</li>
-            <li>civil partnership: copy of your civil agreement certificate</li>
-            <li>divorce: copy of your decree absolute and your birth certificate</li>
-            <li>statutory declaration: copy of the statutory declaration</li>
-            <li>deed poll: copy of your deed poll</li>
-          </ul>
-          '
-        }) }}    
+        
         {% endcall %}
 
         {{ govukButton({
