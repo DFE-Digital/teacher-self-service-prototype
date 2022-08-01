@@ -1,0 +1,213 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Teacher self-service account" %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% include "includes/header.html" %}
+
+      <nav class="app-sub-navigation">
+
+        <ul class="app-sub-navigation__list">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="page" href="#">Qualifications</a>
+              </li>
+
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" href="account-details">Account details</a>
+              </li>
+            
+          </ul>
+      
+      </nav>
+
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "Initial teacher training (ITT)",
+ 
+        rows: [{
+          
+          key: {
+            text: "Qualification"
+          },
+          value: {
+            text: "Postgraduate Certificate in Education"
+          }
+         },  {
+          key: {
+            text: "Result"
+          },
+          value: {
+            text: "Upper second class honours"
+          }
+         },
+         {
+          key: {
+            text: "Completion date"
+          },
+          value: {
+            text: "1 September 2019"
+          }
+         }, {
+          key: {
+            text: "Certificate"
+          },
+          value: {
+            text: "Initital teacher training certificate"
+          },
+          actions: {
+            items: [{
+              text: "Download PDF",
+              visuallyHiddenText: "Download confirmation of Initital teacher training certificate pdf ",
+              href: "#"
+            }]
+          }
+         }]         
+      }) }}
+
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "Qualified teacher status (QTS)",
+ 
+        rows: [{
+          key: {
+            text: "Result "
+          },
+          value: {
+            html: "Attained QTS status" 
+          } 
+        }, {
+          key: {
+            text: "Completion date"
+          },
+          value: {
+            text: "29 May 2021"
+          }
+        }, {
+          key: {
+            text: "Certificate"
+          },
+          value: {
+            text: "Qualified teacher status certificate"
+          },
+          actions: {
+            items: [{
+              text: "Download PDF",
+              visuallyHiddenText: "Download qualified teacher status certificate pdf ",
+              href: "#"
+            }]
+          }
+         }]         
+      }) }}
+
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "Early years teacher status (EYTS)",
+ 
+        rows: [{
+          key: {
+            text: "Result "
+          },
+          value: {
+            html: "Attained EYTS status" 
+          } 
+        }, {
+          key: {
+            text: "Completion date"
+          },
+          value: {
+            text: "29 May 2021"
+          }
+        }, {
+          key: {
+            text: "Certificate"
+          },
+          value: {
+            text: "Early Years Teacher status certificate"
+          },
+          actions: {
+            items: [{
+              text: "Download PDF",
+              visuallyHiddenText: "Download Early Years Teacher status certificate pdf ",
+              href: "#"
+            }]
+          }
+         }]         
+      }) }}
+
+
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "National Professional Qualification (NPQ) for executive leadership",
+ 
+        rows: [{
+          key: {
+            text: "Result"
+          },
+          value: {
+            html: "Attained NPQ status" 
+          } 
+        }, {
+          key: {
+            text: "Completion date"
+          },
+          value: {
+            text: "29 May 2021"
+          }
+        }, {
+          key: {
+            text: "Certificate"
+          },
+          value: {
+            text: "NPQ exective leadership certificate"
+          },
+          actions: {
+            items: [{
+              text: "Download PDF",
+              visuallyHiddenText: "Download NPQ exective leadership certificate pdf ",
+              href: "#"
+            }]
+          }
+         }]         
+      }) }}
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "National Professional Qualification (NPQ) for headteacher",
+ 
+        rows: [{
+          key: {
+            text: "Result"
+          },
+          value: {
+            html: "Attained NPQ status" 
+          } 
+        }, {
+          key: {
+            text: "Completion date"
+          },
+          value: {
+            text: "29 May 2021"
+          }
+        }, {
+          key: {
+            text: "Certificate"
+          },
+          value: {
+            text: "NPQ headteacher certificate"
+          },
+          actions: {
+            items: [{
+              text: "Download PDF",
+              visuallyHiddenText: "Download NPQ headteacher certificate pdf ",
+              href: "#"
+            }]
+          }
+         }]         
+      }) }}
+    </div>
+  </div>
+{% endblock %}
