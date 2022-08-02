@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" novalidate>
+        <form action="confirmation" method="post" novalidate data-validate>
 
         {% call govukFieldset({
           legend: {
@@ -19,29 +19,30 @@
             isPageHeading: true
           }
         }) %}
-        <p>We've hidden part of your email address to protect your data.</p>
-  
+
         {{ govukInput({
           label: {
             text: "Email address"
           },
-          id: "email",
-          name: "email",
-          value: "sarah.jones123@gmail.com",
-          type: "email",
           autocomplete: "email",
-   
-          spellcheck: false
-        }) }}
-
-        
+          spellcheck: false,
+          type: "email",
+          decorate: ["account", "email"],
+          validate: {
+            presence: {
+              message: "Enter your email address"
+            },
+            email: {
+              message: "Enter an email address in the correct format, like name@example.com"
+            }
+          }
+        }) }}     
         
          
         {% endcall %}
 
         {{ govukButton({
-          text: "Update email address",
-          href: "confirmation"
+          text: "Update email address"        
         }) }}
       </form>
     </div>
