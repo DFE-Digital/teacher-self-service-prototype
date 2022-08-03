@@ -10,7 +10,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form method="post" novalidate>
+      <form action="confirmation" method="post" novalidate data-validate>
 
         {% call govukFieldset({
           legend: {
@@ -29,13 +29,8 @@
             
           </ul>
          {{ govukDateInput({
-          id: "dob",
-          namePrefix: "date-of-birth",
-          fieldset: {
-            legend: {
-              isPageHeading: false
-            }
-          },
+
+        
           hint: {
             text: "For example, 27 3 2007"
           },
@@ -43,35 +38,58 @@
             {
               classes: "govuk-input--width-2 ",
               name: "day",
-              value: "1"
+              value: "1",
+              decorate: "day"
+
             },
             {
               classes: "govuk-input--width-2 ",
               name: "month",
-              value: "1"
+              value: "1",
+              decorate: "month"
+
             },
             {
               classes: "govuk-input--width-4 ",
               name: "year",
-              value: "1980"
+              value: "1980",
+              decorate: "year"
+
             }
-          ]
+          ], 
+    
+          validate: {
+            presence: {
+              message: "Enter the date your passport was issued"
+            },
+            date: {
+              message: "Passport issued should be a valid date"
+            }
+          }
         }) }}
 
+      
+        
 
         {{ govukFileUpload({
           id: "file-upload-1",
           name: "file-upload-1",
           label: {
             text: "Upload your evidence"
+          },
+          decorate: "upload",  
+          validate: {
+            presence: {
+              message: "Upload your evidence"
+            }
           }
         }) }}
          
         {% endcall %}
 
         {{ govukButton({
-          text: "Update date of birth",
-          href: "confirmation"
+          text: "Update date of birth"
+        
         }) }}
       </form>
     </div>
