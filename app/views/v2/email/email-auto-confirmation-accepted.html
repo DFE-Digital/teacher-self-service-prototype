@@ -1,0 +1,17 @@
+{% extends "layouts/email.html" %}
+
+{% set subject = "Request approved" %}
+{% set from = "GOV.UK <teacher-self-serve@gov.uk>" %}
+{% set to = "Jane Jones <jane.jones123@gmail.com>" %}
+
+{% block content %}
+  <p>Dear Sarah,</p>
+  <p>We’ve approved your request to update your date of birth in the Teacher Self-Service portal.</p>
+  <p>You will see the update the next time you log in.</p>
+  <p>If you have any questions, email us at:</p>
+  <p><a href='mailto:QTS.enquiries@education.gov.uk'>QTS.enquiries@education.gov.uk</a></p>
+  <p>Kind regards</p>
+  <p>QTS and Induction team</p>
+  <p>Teacher Regulation Agency</p>
+
+{% endblock %}

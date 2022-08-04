@@ -1,0 +1,83 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Update your date of birth" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="confirmation" method="post" novalidate data-validate>
+
+        {% call govukFieldset({
+          legend: {
+            text:  title,
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <p>If your date of birth is wrong, you’ll need to provide evidence to update it. </p>
+
+        <p>Your evidence must be in pdf or jpeg format and be a scan of 1 of the following:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>birth certificate</li>
+            <li>valid passport</li>
+            <li>valid driving licence</li>
+            
+          </ul>
+          <p>Make sure that your scan is readable and that your email is up to date, in case we need to contact you.</p>
+          <p>Existing date of birth: <span class="govuk-!-font-weight-bold">1 January 1980</span></p>
+
+     
+
+         {{ govukDateInput({
+
+          fieldset: {
+            legend: {
+              text: "Your date of birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },  
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          decorate: "year",
+
+          validate: {
+            presence: {
+              message: "Enter your date of birth"
+            }
+          }
+        }) }}
+
+      
+
+        {{ govukFileUpload({
+          id: "file-upload-1",
+          name: "file-upload-1",
+          label: {
+            text: "Upload your evidence",
+            classes: "govuk-label--s"
+          },
+          decorate: "upload",  
+          validate: {
+            presence: {
+              message: "Upload your evidence"
+            }
+          }
+        }) }}
+         
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Submit update"
+        
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

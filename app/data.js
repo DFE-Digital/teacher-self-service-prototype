@@ -8,11 +8,10 @@
  */
 export default {
   // Set feature flags using the `features` key
-  features: {
-    validation: {
-      on: false,
-      name: 'Form validation',
-      description: 'Use form validation when navigating prototype'
-    }
-  }
+  
+  'email-address': 'sarah.jones123@gmail.com',
+  'date-of-birth': { day: 27, month: 3, year: 1987 },
+  'national-insurance': 'JL0034AD',
+  'telephone-number': '07827996233',
+
 }

@@ -1,0 +1,43 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Update your National Insurance number" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="confirmation" method="post" novalidate data-validate>
+        {% call govukFieldset({
+          legend: {
+            text: title,
+            classes: "govuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+        <p>Existing National Insurance Number: <span class="govuk-!-font-weight-bold">{{ data['national-insurance'] }}</span></p>
+
+        {{ govukInput({
+          classes: "govuk-input--width-10",
+          id: "national-insurance",
+          name: "national-insurance",
+          value: "",        
+          decorate: ["national-insurance"],
+          validate: {
+            presence: {
+              message: "Enter a valid national insurance number"
+            }
+          }
+        }) }}   
+        {% endcall %}
+
+        {{ govukButton({
+          text: "Update National Insurance number"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

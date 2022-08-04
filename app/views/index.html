@@ -11,11 +11,9 @@
   <div class="app-masthead">
     <div class="govuk-width-container">
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds-from-desktop">
           <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-3">
-            {{ serviceName }}
+            {{ serviceName }} prototype
           </h1>
-        </div>
       </div>
     </div>
   </div>
@@ -28,29 +26,67 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
-      <p class="govuk-heading-s">The screens and journeys for the  {{ serviceName }} experience</p>
+
+      <p class="govuk-heading-m">Version 2 (4 August 2022)</p>
+      {% set changesv2 %}
+      <ul class="govuk-list govuk-list--number govuk-!-font-size-16">
+        <li>The addition of middle name (change a name journey)</li>
+        <li>Copy changes to change name and dob around evidence</li>
+        <li>Change a name & DOB button changes from send to submit </li>
+        <li>Input fields for change journeys left empty - to prompt users to enter details </li>
+        <li>Establishment listed on  Initial teacher training (ITT) table </li>
+      </ul>
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "V2 changes include",
+        html: changesv2
+      }) }}
+   
+      <p class="govuk-heading-s">V2 Screens</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href='dashboard/index'>Dashboard</a></li>
-        <li><a href="change-name/index">Change name</a></li>
-        <li><a href="change-dob/index">Change date of birth</a></li>
-        <li><a href="change-telephone/index">Change phone number</a></li>
-        <li><a href="change-email/index">Change email address</a></li>
-        <li><a href="change-national-insurance/index">Change National Insurance number</a></li>
+        <li><a href='v2/dashboard/index'>Dashboard</a></li>
+        <li><a href="v2/change-name/index">Change name</a></li>
+        <li><a href="v2/change-dob/index">Change date of birth</a></li>
+        <li><a href="v2/change-telephone/index">Change phone number</a></li>
+        <li><a href="v2/change-email/index">Change email address</a></li>
+        <li><a href="v2/change-national-insurance/index">Change National Insurance number</a></li>
       </ul>
+
+
       <p class="govuk-heading-s">Emails sent from service</p>
-      <p>Changes to email address, phone & NI do not require DfE contact centre checks. After updating the user will receive the following email  </p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href="email/email-auto-confirmation.html">Auto confirmation (Email, Phone, NI)</a></li>
-      </ul>
-      <p>Changes to Name or D.O.B require DfE approval. The user will recieve a confimation email, followed by an email accepting or rejecting their change request.  </p>
+    
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="v1/email/email-auto-confirmation.html">Auto confirmation (Email, Phone, NI)</a></li>
+          <li><a href="v1/email/email-auto-confirmation-awaiting.html">Auto confirmation (Name, D.O.B)</a></li>
+          <li><a href="v1/email/email-auto-confirmation-rejected.html">Email changes rejection (Name. D.O.B)</a></li>
+          <li><a href="v1/email/email-auto-confirmation-accepted.html">Email changes accepted (Name. D.O.B)</a></li>
+        </ul>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-      <ul class="govuk-list govuk-list--bullet">
 
-        <li><a href="email/email-auto-confirmation-awaiting.html">Auto confirmation (Name, D.O.B)</a></li>
-        <li><a href="email/email-auto-confirmation-rejected.html">Email changes rejection (Name. D.O.B)</a></li>
-        <li><a href="email/email-auto-confirmation-accepted.html">Email changes accepted (Name. D.O.B)</a></li>
-      </ul>
+      <p class="govuk-heading-m">Previous work</p>
+
+      <!-- Version 1 - design history -->
+      <p >Earlier iterations of the teacher self-serve. Includes links to research and findings</p>
+      {% set version1 %}
+      <p class="govuk-heading-s">V1 Screens</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href='v1/dashboard/index'>Dashboard</a></li>
+          <li><a href="v1/change-name/index">Change name</a></li>
+          <li><a href="v1/change-dob/index">Change date of birth</a></li>
+          <li><a href="v1/change-telephone/index">Change phone number</a></li>
+          <li><a href="v1/change-email/index">Change email address</a></li>
+          <li><a href="v1/change-national-insurance/index">Change National Insurance number</a></li>
+        </ul>
+      {% endset %}
+    {{ govukDetails({
+      summaryText: "Version 1 (25 Sept 2022)",
+      html: version1
+    }) }}
+
     </div>
   </div>
 {% endblock %}

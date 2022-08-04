@@ -1,0 +1,126 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Teacher self-service account" %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      {% include "includes/header.html" %}
+
+      <nav class="app-sub-navigation">
+
+        <ul class="app-sub-navigation__list">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="index">Qualifications</a>
+              </li>
+
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="page" href="#">Account details</a>
+              </li>
+            
+          </ul>
+      
+      </nav>
+
+      
+      {% set nationalInsurance %}
+         {{ data['national-insurance'] }}
+      {% endset %}
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "Personal details",
+      
+        rows: [{
+          key: {
+            html: "Full name"
+          },
+          value: {
+            html: "Sarah Jones" 
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "Change name",
+              href: "../change-name/index"
+            }]
+          }
+        }, {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "1 January 1980"
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "change date of birth",
+              href: "../change-dob/index"
+            }]
+          }
+        }, {
+          key: {
+            text: "National Insurance Number"
+          },
+          value: {
+            html: nationalInsurance
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "change National Insurance Number",
+              href: "../change-national-insurance/index"
+            }]
+          }
+        }]
+      }) }}
+
+      {% set telephoneNumber %}
+      {{ data['telephone-number'] }}
+      {% endset %}
+      {% set emailAddress %}
+         {{ data['email-address'] }}
+      {% endset %}
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "Contact details",
+      
+        rows: [{
+          key: {
+            html: "Email address"
+          },
+          value: {
+            html: emailAddress 
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "Change email address",
+              href: "../change-email/index"
+            }]
+          }
+        }, {
+          key: {
+            text: "Telephone number"
+          },
+          value: {
+            html: telephoneNumber
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "change telephone number",
+              href: "../change-telephone/index"
+            }]
+          }
+        }]
+      }) }}
+
+  
+   
+    </div>
+  </div>
+{% endblock %}
