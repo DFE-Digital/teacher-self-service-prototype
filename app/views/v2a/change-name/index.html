@@ -19,7 +19,8 @@
             isPageHeading: true
           }
         }) %}
-       
+        <input type="hidden" name="name-change" id="name-change" value="yes">
+
         <p>If you’ve changed your name, you’ll need to provide evidence to update it. </p>
 
         <p>Your evidence must be in pdf or jpeg format and be a scan of 1 of the following:</p>
@@ -37,7 +38,7 @@
 
         {{ govukInput({
           label: {
-            text: "First name",
+            text: "First names",
             classes: "govuk-label--s"
           },          
           hint: {
@@ -67,7 +68,7 @@
 
         {{ govukInput({
           label: {
-            text: "Last name",
+            text: "Last names",
             classes: "govuk-label--s"
           },          
           hint: {
@@ -107,7 +108,8 @@
         {% endcall %}
 
         {{ govukButton({
-          text: "Submit update"
+          text: "Submit update",
+          value: "test"
         }) }}
       </form>
     </div>

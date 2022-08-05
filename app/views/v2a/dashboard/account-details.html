@@ -1,7 +1,7 @@
 {% extends "layouts/default.html" %}
 
 {% set title = "Teacher self-service account" %}
-
+{% set emailAddress = data['email-address'] or 'email@example.com' %}
 
 {% block content %}
 
@@ -11,24 +11,41 @@
       {% include "includes/header.html" %}
 
       <nav class="app-sub-navigation">
-
         <ul class="app-sub-navigation__list">
               <li class="app-sub-navigation__item">
                 <a class="app-sub-navigation__link"  href="index">Qualifications</a>
               </li>
-
               <li class="app-sub-navigation__item">
                 <a class="app-sub-navigation__link" aria-current="page" href="#">Account details</a>
               </li>
-            
           </ul>
-      
       </nav>
 
-      
       {% set nationalInsurance %}
          {{ data['national-insurance'] }}
       {% endset %}
+
+      {% set fullName %}
+         Sarah Jones    
+         {% if data['name-change'] == "yes" %}
+            {{govukTag({
+              text: "Pending review",
+              classes: "govuk-tag--yellow"
+            })}}
+        {% endif %}
+      {% endset %}
+
+      {% set fullDob %}
+          1 January 1980	    
+         {% if data['dob-change'] == "yes" %}
+            {{govukTag({
+              text: "Pending review",
+              classes: "govuk-tag--yellow"
+            })}}
+        {% endif %}
+      {% endset %}
+
+ 
       {{ xGovukSummaryCard({
         classes: "govuk-!-margin-bottom-5",
         titleText: "Personal details",
@@ -38,7 +55,7 @@
             html: "Full name"
           },
           value: {
-            html: "Sarah Jones" 
+            html: fullName 
           },
           actions: {
             items: [{
@@ -52,7 +69,7 @@
             text: "Date of birth"
           },
           value: {
-            text: "1 January 1980"
+            html: fullDob
           },
           actions: {
             items: [{
@@ -78,6 +95,7 @@
         }]
       }) }}
 
+       
       {% set telephoneNumber %}
       {{ data['telephone-number'] }}
       {% endset %}

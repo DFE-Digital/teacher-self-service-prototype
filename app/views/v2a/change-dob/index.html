@@ -11,6 +11,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <form action="confirmation" method="post" novalidate data-validate>
+        <input type="hidden" name="dob-change" id="dob-change" value="yes">
 
         {% call govukFieldset({
           legend: {

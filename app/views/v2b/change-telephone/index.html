@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Update your National Insurance number" %}
+{% set title = "Update your telephone number" %}
 
 {% block pageNavigation %}
 {% include "includes/back.html" %}
@@ -18,25 +18,33 @@
             isPageHeading: true
           }
         }) %}
-        <p>Existing National Insurance Number: <span class="govuk-!-font-weight-bold">{{ data['national-insurance'] }}</span></p>
 
         {{ govukInput({
-          classes: "govuk-input--width-10",
-          id: "national-insurance",
-          name: "national-insurance",
-          value: "",        
-          decorate: ["national-insurance"],
+       
+          hint: {
+            text: "For international numbers include the country code"
+          },
+          id: "telephone-number",
+          name: "telephone-number",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-input--width-20",          
+          decorate: ["telephone-number"],
           validate: {
             presence: {
-              message: "Enter a valid national insurance number"
+              message: "Enter a telephone number"
             }
           }
-        }) }}   
+        }) }}
+
+        
+        
+         
         {% endcall %}
 
         {{ govukButton({
-          text: "Update National Insurance number"
-        }) }}
+          text: "Update telephone number"
+                }) }}
       </form>
     </div>
   </div>

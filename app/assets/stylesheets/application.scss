@@ -39,3 +39,9 @@ $govuk-assets-path: "/govuk/assets/";
 .app-\!-no-wrap {
   white-space: nowrap !important;
 }
+
+.govuk-width-container {
+  margin-bottom: 10px;
+    display: inline-block;
+    float: right;
+}

@@ -1,0 +1,18 @@
+{% extends "layouts/email.html" %}
+
+{% set subject = "Request successfully received" %}
+{% set from = "GOV.UK <teacher-self-serve@gov.uk>" %}
+{% set to = "Jane Jones <jane.jones123@gmail.com>" %}
+
+{% block content %}
+  <p>Dear Sarah,</p>
+  <p>We’ve received your request to update your name within the Teacher Self-Service portal.</p>
+  <p>The change will appear in the portal within 5 days.</p>
+  <p>If you did not request an update, email us as soon as possible at:</p>
+  <p><a href='mailto:QTS.enquiries@education.gov.uk'>QTS.enquiries@education.gov.uk</a></p>
+  <p>Kind regards</p>
+  <p>QTS and Induction team</p>
+  <p>Teacher Regulation Agency </p>
+
+
+{% endblock %}
