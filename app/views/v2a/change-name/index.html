@@ -30,19 +30,19 @@
             <li>decree absolute and birth certificate</li>
             <li>statutory declaration</li>
             <li>deed poll</li>
-            
+
           </ul>
           <p>Make sure that your scan is readable and that your email is up to date, in case we need to contact you.</p>
-          <p>Existing name: <span class="govuk-!-font-weight-bold"> Sarah Jones</span>
+          <p>Current name we have on record: <span class="govuk-!-font-weight-bold"> Sarah Jones</span>
           </p>
 
         {{ govukInput({
           label: {
             text: "First names",
             classes: "govuk-label--s"
-          },          
+          },
           hint: {
-            text: "Or given name"
+            text: "Or given names"
           },
           classes: "govuk-!-width-two-thirds",
           autocomplete: "first-name",
@@ -57,7 +57,7 @@
         }) }}
         {{ govukInput({
           label: {
-            text: "Middle name (optional)",
+            text: "Middle names (optional)",
             classes: "govuk-label--s"
           },
           classes: "govuk-!-width-two-thirds",
@@ -70,9 +70,9 @@
           label: {
             text: "Last names",
             classes: "govuk-label--s"
-          },          
+          },
           hint: {
-            text: "Or given name"
+            text: "Or family names"
           },
           classes: "govuk-!-width-two-thirds",
           autocomplete: "first-name",
@@ -81,14 +81,14 @@
           id: "last-name",
           value: '',
           name: "last name",
-          
+
           validate: {
             presence: {
               message: "Enter your last name"
             }
           }
         }) }}
-       
+
         {{ govukFileUpload({
           id: "file-upload-1",
           name: "file-upload-1",
@@ -96,15 +96,15 @@
             text: "Upload your evidence",
             classes: "govuk-label--s"
           },
-          decorate: "upload", 
-          value: '', 
+          decorate: "upload",
+          value: '',
           validate: {
             presence: {
               message: "Upload your evidence"
             }
           }
         }) }}
-        
+
         {% endcall %}
 
         {{ govukButton({
