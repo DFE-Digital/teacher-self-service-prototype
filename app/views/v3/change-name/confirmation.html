@@ -1,0 +1,75 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Confirm change of name " %}
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+      <form action="../dashboard/account-details" method="post" novalidate data-validate>
+        <input type="hidden" name="alert" id="alert" value="show">
+        <input type="hidden" name="alert-type" id="alert-type" value="name-update">
+        <input type="hidden" name="name-change-lozenge" id="name-change-lozenge" value="show">
+  
+
+        
+        {% set fullName %}
+        {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}
+        {% endset %}
+        {% set evidenceFile %}
+        {{ data['file-upload-1'] }} 
+        {% endset %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                html: fullName
+              },
+              actions: {
+                items: [
+                  {
+                    href: "index",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Evidence"
+              },
+              value: {
+                html: evidenceFile
+              },
+              actions: {
+                items: [
+                  {
+                    href: "evidence",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }           
+          ]
+        }) }}
+        
+        {{ govukInsetText({
+          text: "We will contact you either to confirm this request, or to notify you if your request isn't sucessful. This can take up to 5 days."
+        }) }}
+        {{ govukButton({
+          text: "Submit update"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

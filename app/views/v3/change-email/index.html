@@ -1,0 +1,44 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Update your email address" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+        <form action="confirmation" method="post" novalidate data-validate>
+
+        <p>Existing email address: <span class="govuk-!-font-weight-bold">{{ data['email-address'] }}</span></p>
+
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          autocomplete: "email-address",
+          spellcheck: false,
+          type: "email",
+          value:'',
+          decorate: "email-address",
+          validate: {
+            presence: {
+              message: "Enter your email address"
+            },
+            email: {
+              message: "Enter an email address in the correct format, like name@example.com"
+            }
+          }
+        }) }}     
+        
+         
+        {{ govukButton({
+          text: "Update email address"        
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Upload your evidence" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+      <form action="confirmation" method="post" novalidate >
+        <p>Your evidence must be in pdf or jpeg format and be a scan of 1 of the following:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>birth certificate</li>
+          <li>valid passport</li>
+          <li>valid driving licence</li>
+          
+        </ul>
+        <p>Make sure that your scan is readable and that your email is up to date, in case we need to contact you.</p>
+
+
+
+        {{ govukFileUpload({
+          id: "file-upload-2",
+          name: "file-upload-2",
+          label: {
+            text: "Upload your evidence",
+            classes: "govuk-label--s"
+          },
+          decorate: "upload",
+          value: '343',
+          validate: {
+            presence: {
+              message: "Upload your evidence"
+            }
+          }
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

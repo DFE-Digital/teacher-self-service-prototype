@@ -27,43 +27,30 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <p class="govuk-heading-m">Version 2 (4 August 2022)</p>
-      {% set changesv2 %}
-      <ul class="govuk-list govuk-list--number govuk-!-font-size-16">
-        <li>The addition of an middle name input field (change a name journey)</li>
-        <li>Copy changes to change name and dob evidence paragraph</li>
-        <li>Change name & DOB submit button copy was  'send' now 'submit' </li>
-        <li>Establishment listed on  Initial teacher training (ITT) table </li>
-        <li>Input fields for change journeys V2b left empty - to prompt users to enter details </li>
+      <p class="govuk-heading-m">Version 3 (23 August 2022)</p>
+      {% set changes %}
+      <ul class="govuk-list govuk-list--number ">
+        <li>New confirmation flow after editing personal details</li>
+     
       </ul>
       {% endset %}
 
       {{ govukDetails({
-        summaryText: "V2 changes include",
-        html: changesv2
+        summaryText: "V3 changes include",
+        html: changes
       }) }}
 
-      <p class="govuk-heading-s">V2a Screens</p>
-      <p >Version A contains empty input fields</p>
+      <p class="govuk-heading-s">V3 Screens</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li><a href='v2a/dashboard/index'>Dashboard</a></li>
-        <li><a href="v2a/change-name/index">Change name</a></li>
-        <li><a href="v2a/change-dob/index">Change date of birth</a></li>
-        <li><a href="v2a/change-telephone/index">Change phone number</a></li>
-        <li><a href="v2a/change-email/index">Change email address</a></li>
-        <li><a href="v2a/change-national-insurance/index">Change National Insurance number</a></li>
+        <li><a href='v3/dashboard/index'>Dashboard</a></li>
+        <li><a href="v3/change-name/index">Change name</a></li>
+        <li><a href="v3/change-dob/index">Change date of birth</a></li>
+        <li><a href="v3/change-telephone/index">Change phone number</a></li>
+        <li><a href="v3/change-email/index">Change email address</a></li>
+        <li><a href="v3/change-national-insurance/index">Change National Insurance number</a></li>
       </ul>
-      <p class="govuk-heading-s">V2b Screens</p>
-      <p >Version B contains pre-filled input fields</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li><a href='v2b/dashboard/index'>Dashboard</a></li>
-        <li><a href="v2b/change-name/index">Change name</a></li>
-        <li><a href="v2b/change-dob/index">Change date of birth</a></li>
-        <li><a href="v2b/change-telephone/index">Change phone number</a></li>
-        <li><a href="v2b/change-email/index">Change email address</a></li>
-        <li><a href="v2b/change-national-insurance/index">Change National Insurance number</a></li>
-      </ul>
+
 
       <p class="govuk-heading-s">Emails sent from service</p>
 
@@ -78,8 +65,41 @@
 
       <p class="govuk-heading-m">Previous work</p>
 
-      <!-- Version 1 - design history -->
+      <!-- Version 2 - design history -->
       <p >Earlier iterations of the teacher self-serve. Includes links to research and findings</p>
+      {% set version2 %}
+      <p class="govuk-heading-s">Version 2 changes </p>
+      <ul class="govuk-list govuk-list--number ">
+        <li>The addition of an middle name input field (change a name journey)</li>
+        <li>Copy changes to change name and dob evidence paragraph</li>
+        <li>Change name & DOB submit button copy was  'send' now 'submit' </li>
+        <li>Establishment listed on  Initial teacher training (ITT) table </li>
+        <li>Input fields for change journeys V2b left empty - to prompt users to enter details </li>
+      </ul>
+      <p class="govuk-heading-s">V2-A Screens</p>
+      <p >Version A contains empty input fields</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href='v2a/dashboard/index'>Dashboard</a></li>
+        <li><a href="v2a/change-name/index">Change name</a></li>
+        <li><a href="v2a/change-dob/index">Change date of birth</a></li>
+        <li><a href="v2a/change-telephone/index">Change phone number</a></li>
+        <li><a href="v2a/change-email/index">Change email address</a></li>
+        <li><a href="v2a/change-national-insurance/index">Change National Insurance number</a></li>
+      </ul>
+      <p class="govuk-heading-s">V2-B Screens</p>
+      <p >Version B contains pre-filled input fields</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href='v2b/dashboard/index'>Dashboard</a></li>
+        <li><a href="v2b/change-name/index">Change name</a></li>
+        <li><a href="v2b/change-dob/index">Change date of birth</a></li>
+        <li><a href="v2b/change-telephone/index">Change phone number</a></li>
+        <li><a href="v2b/change-email/index">Change email address</a></li>
+        <li><a href="v2b/change-national-insurance/index">Change National Insurance number</a></li>
+      </ul>
+      {% endset %}
+
+      <!-- Version 2 - design history -->
       {% set version1 %}
       <p class="govuk-heading-s">V1 Screens</p>
 
@@ -92,8 +112,13 @@
           <li><a href="v1/change-national-insurance/index">Change National Insurance number</a></li>
         </ul>
       {% endset %}
+      {{ govukDetails({
+        summaryText: "Version 2 (4 Aug 2022)",
+        html: version2
+      }) }}
+  
     {{ govukDetails({
-      summaryText: "Version 1 (25 Sept 2022)",
+      summaryText: "Version 1 (25 Sep 2022)",
       html: version1
     }) }}
 

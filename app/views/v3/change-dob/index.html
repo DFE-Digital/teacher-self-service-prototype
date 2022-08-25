@@ -1,0 +1,58 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Update your date of birth" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="evidence" method="post" novalidate >
+        <input type="hidden" name="dob-change" id="dob-change" value="yes">
+
+        <h1 class="govuk-heading-l">{{ title }} </h1>
+        <p>If your date of birth is wrong, you’ll need to provide evidence on the following page to update it. </p>
+
+
+        <p>Existing date of birth: <span class="govuk-!-font-weight-bold">1 January 1980</span></p>
+
+
+         {{ govukDateInput({
+
+          fieldset: {
+            legend: {
+              text: "Your date of birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },  
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          decorate: "year",
+          name: "dob",
+          id: "dob",
+
+          validate: {
+            presence: {
+              message: "Enter your date of birth"
+            }
+          }
+        }) }}
+
+      
+
+  
+         
+
+        {{ govukButton({
+          text: "Continue"
+        
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

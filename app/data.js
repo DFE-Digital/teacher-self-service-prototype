@@ -13,9 +13,8 @@ export default {
   'date-of-birth': { day: 1, month: 1, year: 1980 },
   'national-insurance': 'JL0034AD',
   'telephone-number': '07827996233',
-  'name-change': 'no',
-  'dob-change': 'no',
   'first-name': 'Sarah',
   'last-name': 'Jones',
+  'middle-name': '',
 
 }
