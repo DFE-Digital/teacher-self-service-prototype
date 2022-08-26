@@ -14,7 +14,6 @@
         <input type="hidden" name="alert-type" id="alert-type" value="dob-update">
         <input type="hidden" name="dob-change-lozenge" id="dob-change-lozenge" value="show">
   
-
         
         {% set dateOfBirth %}
           {{ data['date-of-birth']['day'] }}  {{ data['date-of-birth']['month'] }} {{ data['date-of-birth']['year'] }}
@@ -30,7 +29,7 @@
                 text: "Date of birth"
               },
               value: {
-                html: dateOfBirth
+                text:  data['date-of-birth'] | dateWithYear
               },
               actions: {
                 items: [
