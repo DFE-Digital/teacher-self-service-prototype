@@ -1,0 +1,134 @@
+{% extends "layouts/start-page.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+
+{% block beforeContent %}
+    {{ govukBreadcrumbs({
+        items: [
+        {
+            text: "Home",
+            href: "https://www.gov.uk/"
+        },
+        {
+            text: "Education, training and skills",
+            href: "https://www.gov.uk/education"
+        },
+        {
+            text: "Teaching and leadership",
+            href: "https://www.gov.uk/education/teaching-and-leadership"
+        },
+        {
+            text: "Teacher training and professional development",
+            href: "https://www.gov.uk/education/teacher-training-and-professional-development"
+        },
+        {
+            text: "Qualified Teacher Status (QTS)",
+            href: "https://www.gov.uk/education/qualified-teacher-status-qts"
+        }
+        ]
+    }) }}
+{% endblock %}
+
+
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <span class="govuk-caption-l">Guidance</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Teacher self-service portal</h1>     
+        
+        <p class="govuk-body-l">Find out how you can access your individual teacher record.</p>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    </div>
+
+
+
+
+<div class="govuk-grid-column-two-thirds">
+    
+    <ul class="govuk-list govuk-!-font-size-16">
+        <li>
+            From: <a class="govuk-!-font-weight-bold" href="https://www.gov.uk/government/organisations/teaching-regulation-agency">Regulation Agency</a>
+        </li>
+        <li>
+            Published 21 December 2020
+        </li>
+
+    </ul>
+    <section class="gem-c-devolved-nations govuk-!-margin-bottom-8"">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+          Applies to England
+        </h2>
+        <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-0">         
+            <li><a class="govuk-link" href="https://www.ewc.wales/site/index.php/en/registration/recognition-as-a-qualified-school-teacher-in-wales.html">Guidance for Wales</a></li>
+            <li><a class="govuk-link" href="https://www.gtcs.org.uk/GTCS-login.aspx">Guidance for Scotland</a></li>
+        </ul>
+    </section>
+
+     <p class="govuk-body">
+        Use this service to:
+    </p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+        <li>
+            view your teacher record
+        </li>
+        <li>
+            obtain electronic copies of your qualified teacher status (QTS), early years teacher status or induction certificates
+        </li>
+        <li>
+            obtain electronic copies of relevant leadership qualification certificates
+        </li>
+        <li>
+            update your personal details
+        </li>
+        <li>
+            download a letter confirming your teacher qualifications
+        </li>
+        <li>
+            input your employment details
+        </li>
+    </ul>
+    <h1 class="govuk-heading-m">Before you start</h1>
+    <ol class="steps govuk-list">
+        <li>
+            Make sure you have your teacher reference number (TRN) ready - this is usually on your payslip or pension statement. If you do not know your TRN you can use our <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">a lost TRN service</a>.
+        </li>
+        <li>
+            Enter your TRN without the ‘RP’ letters or the slash (‘/’) symbol. Qualified teacher status (QTS), General Teaching Council (GTC), Department for Education (DfE), Department for Education and Skills (DfES) or Department for Children, Schools and Families (DCSF) numbers are the same as TRNs and can be entered as normal.
+        </li>
+    </ol>
+    {{ govukButton({
+        text: "Start now",
+        href: "https://teacherservices.education.gov.uk/SelfService/Login",
+        isStartButton: true
+    }) }}
+  </div>
+  
+    <div class="govuk-grid-column-one-third">
+        <div class="gem-c-related-navigation govuk-!-margin-bottom-8">
+            <br>
+            <h2 class="govuk-heading-s ">Related content</h2>
+            <ul class="govuk-list govuk-!-font-size-16 govuk-list--spaced ">
+                <li>
+                    <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">Teacher reference number (TRN)</a>
+                </li>
+                <li>
+                    <a href="https://www.gov.uk/guidance/early-career-payments-guidance-for-teachers-and-schools">Early-career payments for teachers</a>
+                </li>
+                <li>
+                    <a href="https://www.gov.uk/guidance/qualified-teacher-status-qts">Qualified teacher status (QTS): qualify to teach in England</a>
+                </li>
+                <li>
+                    <a href="https://www.gov.uk/guidance/teacher-status-checks-information-for-employers">Teacher status checks: information for employers</a>
+                </li>
+                <li>
+                    <a href="https://www.gov.uk/guidance/levelling-up-premium-payments-for-teachers">Levelling up premium payments for teachers</a>
+                </li>
+            </ul>
+            </div>
+        </div>    
+
+ </div>
+
+{% endblock %}
