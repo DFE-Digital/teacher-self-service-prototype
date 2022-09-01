@@ -54,7 +54,7 @@
       {% endset %}
 
       {% set fullName %}
-         Sarah Jones    
+      {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
          {% if data['name-change-lozenge'] == "show" %}
             {{govukTag({
               text: "Pending review",
@@ -64,7 +64,8 @@
       {% endset %}
 
       {% set fullDob %}
-          1 January 1980	    
+          {{ data['date-of-birth-initial'] | dateWithYear }} 
+            
          {% if data['dob-change-lozenge'] == "show" %}
             {{govukTag({
               text: "Pending review",

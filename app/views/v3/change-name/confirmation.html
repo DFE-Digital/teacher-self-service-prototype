@@ -18,10 +18,11 @@
 
         
         {% set fullName %}
-        {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}
+         {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}
         {% endset %}
+        
         {% set evidenceFile %}
-        {{ data['file-upload-1'] }} 
+          {{ data['file-upload-1'] }} 
         {% endset %}
 
         {{ govukSummaryList({
@@ -31,7 +32,7 @@
                 text: "Full name"
               },
               value: {
-                html: fullName
+                text: fullName
               },
               actions: {
                 items: [

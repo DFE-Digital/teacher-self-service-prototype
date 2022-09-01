@@ -1,26 +1,22 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Update your name" %}
+{% set title = "Edit prototype data" %}
 
 {% block pageNavigation %}
 {% include "includes/back.html" %}
 {% endblock %}
 
 {% block content %}
+
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">{{ title }} </h1>
 
-      <form action="evidence" method="post" novalidate >
+      <form action="index" method="post" novalidate >
 
 
         <p>If you’ve changed your name, you’ll need to provide evidence on the following page. </p>
 
-        <p>Existing name: 
-            <span class="govuk-!-font-weight-bold">
-              {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
-          </span>
-        </p>
 
 
         {{ govukInput({
@@ -35,7 +31,7 @@
           autocomplete: "first-name",
           spellcheck: false,
           decorate: "first-name",
-          value: '',
+          name: "first-name-initial",
           validate: {
             presence: {
               message: "Enter your first name"
@@ -49,10 +45,8 @@
             classes: "govuk-label--s"
           },
           classes: "govuk-!-width-two-thirds",
-          id: "middle-name",
-          name: "middle-name",
+          name: "middle-name-initial",
           autocomplete: "middle-name",
-          value: '',
           spellcheck: false
         }) }}
 
@@ -67,10 +61,10 @@
           classes: "govuk-!-width-two-thirds",
           autocomplete: "first-name",
           spellcheck: false,
-          decorate: "first-name",
-          id: "last-name",
-          value: '',
-          name: "last-name",
+          decorate: "last-name",
+          id: "last-name-initial",
+          name: "last-name-initial",
+
 
           validate: {
             presence: {
@@ -78,14 +72,53 @@
             }
           }
         }) }}
+        {{ govukDateInput({
 
- 
+          fieldset: {
+            legend: {
+              text: "Your date of birth",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },  
+          hint: {
+            text: "For example, 27 3 2007"
+          },
+          decorate: "year",
+          name: "date-of-birth-initial",
+          id: "date-of-birth-initial",
+
+          validate: {
+            presence: {
+              message: "Enter your date of birth"
+            }
+          }
+        }) }}
 
 
+        {{ govukInput({
+          label: {
+            text: "Email address"
+          },
+          autocomplete: "email-address",
+          spellcheck: false,
+          type: "email",
+          value:'',
+          decorate: "email-address",
+          validate: {
+            presence: {
+              message: "Enter your email address"
+            },
+            email: {
+              message: "Enter an email address in the correct format, like name@example.com"
+            }
+          }
+        }) }}   
+       
         {{ govukButton({
           text: "Continue"
         }) }}
       </form>
-    </div>
   </div>
+</div>
 {% endblock %}
