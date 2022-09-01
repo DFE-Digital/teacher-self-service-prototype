@@ -1,5 +1,5 @@
 {% extends "layouts/start-page.html" %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% set serviceName = "" %}
 
 
 {% block beforeContent %}
@@ -100,7 +100,7 @@
     </ol>
     {{ govukButton({
         text: "Start now",
-        href: "https://teacherservices.education.gov.uk/SelfService/Login",
+        href: "../sign-in",
         isStartButton: true
     }) }}
   </div>
