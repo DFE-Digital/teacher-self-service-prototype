@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Confirm changes " %}
+{% set title = "Review date of birth update " %}
 
 
 {% block content %}
@@ -13,14 +13,14 @@
         <input type="hidden" name="alert" id="alert" value="show">
         <input type="hidden" name="alert-type" id="alert-type" value="dob-update">
         <input type="hidden" name="dob-change-lozenge" id="dob-change-lozenge" value="show">
-  
 
-        
+
+
         {% set dateOfBirth %}
           {{ data['date-of-birth']['day'] }}  {{ data['date-of-birth']['month'] }} {{ data['date-of-birth']['year'] }}
         {% endset %}
         {% set evidenceFile %}
-          {{ data['file-upload-2'] }} 
+          {{ data['file-upload-2'] }}
         {% endset %}
 
         {{ govukSummaryList({
@@ -58,15 +58,15 @@
                   }
                 ]
               }
-            }           
+            }
           ]
         }) }}
-        
+
         {{ govukInsetText({
-          text: "We will contact you either to confirm this request, or to notify you if your request isn't sucessful. This can take up to 5 days."
+          text: "We'll email you to confirm the update or let you know if there's a problem. This can take up to 5 days. Your certicates will be changed as soon as the update is confirmed"
         }) }}
         {{ govukButton({
-          text: "Submit changes"
+          text: "Submit update"
         }) }}
       </form>
     </div>

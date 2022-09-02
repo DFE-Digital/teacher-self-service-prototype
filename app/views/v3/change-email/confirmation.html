@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Confirm email address " %}
+{% set title = "Review email address " %}
 
 
 {% block content %}
@@ -14,7 +14,7 @@
       <form action="../dashboard/account-details" method="post" novalidate data-validate>
         <input type="hidden" name="alert" id="alert" value="show">
         <input type="hidden" name="alert-type" id="alert-type" value="email-update">
-  
+
         {% set emailAddress %}
         {{ data['email-address'] }}
         {% endset %}
@@ -39,10 +39,10 @@
             }
           ]
         }) }}
-        
+
 
         {{ govukButton({
-          text: "Confirm changes"
+          text: "Update email address"
         }) }}
       </form>
     </div>

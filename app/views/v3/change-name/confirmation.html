@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Confirm change of name " %}
+{% set title = "Review name update " %}
 
 
 {% block content %}
@@ -14,14 +14,14 @@
         <input type="hidden" name="alert" id="alert" value="show">
         <input type="hidden" name="alert-type" id="alert-type" value="name-update">
         <input type="hidden" name="name-change-lozenge" id="name-change-lozenge" value="show">
-  
 
-        
+
+
         {% set fullName %}
         {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}
         {% endset %}
         {% set evidenceFile %}
-        {{ data['file-upload-1'] }} 
+        {{ data['file-upload-1'] }}
         {% endset %}
 
         {{ govukSummaryList({
@@ -59,12 +59,12 @@
                   }
                 ]
               }
-            }           
+            }
           ]
         }) }}
-        
+
         {{ govukInsetText({
-          text: "We will contact you either to confirm this request, or to notify you if your request isn't sucessful. This can take up to 5 days."
+          text: "We'll email you to confirm the update or let you know if there's a problem. This can take up to 5 days. Your certicates will be changed as soon as the update is confirmed."
         }) }}
         {{ govukButton({
           text: "Submit update"

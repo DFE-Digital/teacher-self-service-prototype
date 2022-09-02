@@ -14,10 +14,13 @@
         <input type="hidden" name="dob-change" id="dob-change" value="yes">
 
         <h1 class="govuk-heading-l">{{ title }} </h1>
-        <p>If your date of birth is wrong, you’ll need to provide evidence on the following page to update it. </p>
+        <p>If your date of birth is wrong, you’ll need to provide evidence to update it. </p>
 
+          <p>First, tell us what you want to change your date of birth to. Then continue to find out about and provide evidence for your date of birth change.</p>
 
-        <p>Existing date of birth: <span class="govuk-!-font-weight-bold">1 January 1980</span></p>
+        <div class="govuk-inset-text">
+         Current date of birth: <span class="govuk-!-font-weight-bold">1 January 1980</span>
+        </div>
 
 
          {{ govukDateInput({
@@ -28,7 +31,7 @@
               isPageHeading: true,
               classes: "govuk-fieldset__legend--s"
             }
-          },  
+          },
           hint: {
             text: "For example, 27 3 2007"
           },
@@ -43,14 +46,14 @@
           }
         }) }}
 
-      
 
-  
-         
+
+
+
 
         {{ govukButton({
-          text: "Continue"
-        
+          text: "Provide your evidence"
+
         }) }}
       </form>
     </div>
