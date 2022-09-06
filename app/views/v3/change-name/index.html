@@ -19,15 +19,11 @@
         <p>First, tell us what you want to change your name to. Then continue to find out about and provide evidence for your name change.</p>
 
         <div class="govuk-inset-text">
-         Current name: <span class="govuk-!-font-weight-bold">Sarah Jones</span>
+            Current name: <span class="govuk-!-font-weight-bold"> {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}     </span>
        </div>
 
 
-        <p>Existing name: 
-            <span class="govuk-!-font-weight-bold">
-              {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
-          </span>
-        </p>
+   
 
 
 

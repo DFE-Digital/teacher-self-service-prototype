@@ -12,9 +12,9 @@ export default {
   'email-address': 'sarah.jones123@gmail.com',
   'date-of-birth-initial': { day: 31, month: 1, year: 1990 },
   'national-insurance': 'JL0034AD',
-  'telephone-number': '07827996233',
+  'telephone-number': '07827 996 233',
   'first-name-initial': 'Sarah',
   'last-name-initial': 'Jones',
   'middle-name-initial': '',
-
+  'date-of-birth': { day: 31, month: 1, year: 1990 },
 }

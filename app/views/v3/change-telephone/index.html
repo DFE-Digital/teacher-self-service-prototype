@@ -14,12 +14,15 @@
       <form action="confirmation" method="post" novalidate data-validate>
 
         <div class="govuk-inset-text">
-         Current phone number: <span class="govuk-!-font-weight-bold">07777 888 000</span>
+         Current phone number: <span class="govuk-!-font-weight-bold">{{ data['telephone-number'] }}</span>
         </div>
 
 
         {{ govukInput({
-
+          label: {
+            text: "Phone number",
+            classes: "govuk-label--s"
+          },
           hint: {
             text: "For international numbers include the country code"
           },

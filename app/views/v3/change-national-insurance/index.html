@@ -20,7 +20,11 @@
         </div>
 
 
-        {{ govukInput({
+        {{ govukInput({          
+          label: {
+          text: "National insurance number",
+          classes: "govuk-label--s"
+        },
           classes: "govuk-input--width-10",
           id: "national-insurance",
           name: "national-insurance",

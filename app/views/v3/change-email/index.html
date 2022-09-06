@@ -11,7 +11,9 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">{{ title }} </h1>
 
-        <form action="confirmation" method="post" novalidate data-validate>
+      <form action="../dashboard/account-details" method="post" novalidate data-validate>
+        <input type="hidden" name="alert" id="alert" value="show">
+        <input type="hidden" name="alert-type" id="alert-type" value="email-update">
 
           <div class="govuk-inset-text">
            Current email address: <span class="govuk-!-font-weight-bold">{{ data['email-address'] }}</span>
@@ -21,7 +23,8 @@
 
         {{ govukInput({
           label: {
-            text: "Email address"
+            text: "Email address",
+            classes: "govuk-label--s"
           },
           autocomplete: "email-address",
           spellcheck: false,
