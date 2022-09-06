@@ -29,10 +29,13 @@
 
       <p class="govuk-heading-m">Version 3 (23 August 2022)</p>
       {% set changes %}
-      <ul class="govuk-list govuk-list--number ">
-        <li>New confirmation flow after editing personal details</li>
-     
-      </ul>
+        <ul class="govuk-list govuk-list--number ">
+          <li>New confirmation page flow after editing personal details</li>
+          <li>Name and DOB have seperate screens for evidence</li>
+          <li>Generic copy of start page and sign in created</li>
+          <li>Addition of age range in Initial teacher training (ITT) column</li>
+          <li>Employment history tab and content based on teachers pension data</li>
+        </ul>
       {% endset %}
 
       {{ govukDetails({
@@ -43,6 +46,8 @@
       <p class="govuk-heading-s">V3 Screens</p>
 
       <ul class="govuk-list govuk-list--bullet">
+        <li><a href='v3/start-page/index'>Gov start page</a></li>
+        <li><a href='v3/sign-in'>Sign-in</a></li>
         <li><a href='v3/dashboard/index'>Dashboard</a></li>
         <li><a href="v3/change-name/index">Change name</a></li>
         <li><a href="v3/change-dob/index">Change date of birth</a></li>
@@ -50,7 +55,7 @@
         <li><a href="v3/change-email/index">Change email address</a></li>
         <li><a href="v3/change-national-insurance/index">Change National Insurance number</a></li>
       </ul>
-
+      <p><a href="edit-data">Change prototype data</a></p>
 
       <p class="govuk-heading-s">Emails sent from service</p>
 

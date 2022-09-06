@@ -20,25 +20,13 @@
     productName: productName,
     serviceName: serviceName if not productName,
     serviceUrl: "/start",
-    containerClasses: "govuk-width-container",
-    navigation: [
-    {
-      href: "../sign-in",
-      text: "Sign out"
-    }
-  ]
+    containerClasses: "govuk-width-container"
   }) }}
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Prototype"
-    },
-    text: "This is a prototype of a new service. Some parts may not work yet."
-  }) }}
 
-  {% block pageNavigation %}{% endblock %}
+
 {% endblock %}
 
 {% block footer %}

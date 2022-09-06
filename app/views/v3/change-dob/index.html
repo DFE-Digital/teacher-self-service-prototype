@@ -18,9 +18,9 @@
 
           <p>First, tell us what you want to change your date of birth to. Then continue to find out about and provide evidence for your date of birth change.</p>
 
-        <div class="govuk-inset-text">
-         Current date of birth: <span class="govuk-!-font-weight-bold">1 January 1980</span>
-        </div>
+
+        <p>Current date of birth: <span class="govuk-!-font-weight-bold"> {{ data['date-of-birth-initial'] | dateWithYear }}</span></p>
+
 
 
          {{ govukDateInput({
@@ -36,8 +36,8 @@
             text: "For example, 27 3 2007"
           },
           decorate: "year",
-          name: "dob",
-          id: "dob",
+          name: "date-of-birth",
+          id: "date-of-birth",
 
           validate: {
             presence: {

@@ -38,7 +38,6 @@
       {% endif %}
 
       {% include "includes/header.html" %}
-
       <nav class="app-sub-navigation">
         <ul class="app-sub-navigation__list">
               <li class="app-sub-navigation__item">
@@ -55,7 +54,8 @@
       {% endset %}
 
       {% set fullName %}
-         Sarah Jones
+
+      {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
          {% if data['name-change-lozenge'] == "show" %}
             {{govukTag({
               text: "Pending review",
@@ -65,7 +65,10 @@
       {% endset %}
 
       {% set fullDob %}
-          1 January 1980
+
+          {{ data['date-of-birth-initial'] | dateWithYear }} 
+            
+
          {% if data['dob-change-lozenge'] == "show" %}
             {{govukTag({
               text: "Pending review",

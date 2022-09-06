@@ -23,6 +23,13 @@
        </div>
 
 
+        <p>Existing name: 
+            <span class="govuk-!-font-weight-bold">
+              {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
+          </span>
+        </p>
+
+
 
         {{ govukInput({
           label: {
@@ -43,6 +50,7 @@
             }
           }
         }) }}
+        
         {{ govukInput({
           label: {
             text: "Middle names (optional)",
