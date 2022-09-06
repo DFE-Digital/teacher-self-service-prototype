@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Confirm national insurance changes" %}
+{% set title = "Review National Insurance number" %}
 
 
 {% block content %}
@@ -13,7 +13,7 @@
       <form action="../dashboard/account-details" method="post" novalidate data-validate>
         <input type="hidden" name="alert" id="alert" value="show">
         <input type="hidden" name="alert-type" id="alert-type" value="ni-update">
-  
+
 
         {% set nationalInsurance %}
         {{ data['national-insurance'] }}
@@ -39,10 +39,10 @@
             }
           ]
         }) }}
-        
+
 
         {{ govukButton({
-          text: "Confirm changes"
+          text: "Update National Insurance number"
         }) }}
       </form>
     </div>

@@ -13,7 +13,11 @@
 
         <form action="confirmation" method="post" novalidate data-validate>
 
-        <p>Existing email address: <span class="govuk-!-font-weight-bold">{{ data['email-address'] }}</span></p>
+          <div class="govuk-inset-text">
+           Current email address: <span class="govuk-!-font-weight-bold">{{ data['email-address'] }}</span>
+          </div>
+
+
 
         {{ govukInput({
           label: {
@@ -32,11 +36,11 @@
               message: "Enter an email address in the correct format, like name@example.com"
             }
           }
-        }) }}     
-        
-         
+        }) }}
+
+
         {{ govukButton({
-          text: "Update email address"        
+          text: "Review email address"
         }) }}
       </form>
     </div>

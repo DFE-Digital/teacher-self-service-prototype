@@ -14,13 +14,21 @@
       <form action="evidence" method="post" novalidate >
 
 
-        <p>If you’ve changed your name, you’ll need to provide evidence on the following page. </p>
+        <p>If you’ve changed your name, you’ll need to provide evidence to update it. </p>
+
+        <p>First, tell us what you want to change your name to. Then continue to find out about and provide evidence for your name change.</p>
+
+        <div class="govuk-inset-text">
+         Current name: <span class="govuk-!-font-weight-bold">Sarah Jones</span>
+       </div>
+
 
         <p>Existing name: 
             <span class="govuk-!-font-weight-bold">
               {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
           </span>
         </p>
+
 
 
         {{ govukInput({
@@ -79,11 +87,11 @@
           }
         }) }}
 
- 
+
 
 
         {{ govukButton({
-          text: "Continue"
+          text: "Provide your evidence"
         }) }}
       </form>
     </div>

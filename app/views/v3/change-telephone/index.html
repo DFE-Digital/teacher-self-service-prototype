@@ -1,6 +1,6 @@
 {% extends "layouts/default.html" %}
 
-{% set title = "Update your telephone number" %}
+{% set title = "Update your phone number" %}
 
 {% block pageNavigation %}
 {% include "includes/back.html" %}
@@ -13,10 +13,13 @@
 
       <form action="confirmation" method="post" novalidate data-validate>
 
-        <p>Existing telephone number: <span class="govuk-!-font-weight-bold">{{ data['telephone-number'] }}</span></p>
+        <div class="govuk-inset-text">
+         Current phone number: <span class="govuk-!-font-weight-bold">07777 888 000</span>
+        </div>
+
 
         {{ govukInput({
-       
+
           hint: {
             text: "For international numbers include the country code"
           },
@@ -25,7 +28,7 @@
           type: "tel",
           autocomplete: "tel",
           value: "",
-          classes: "govuk-input--width-20",          
+          classes: "govuk-input--width-20",
           decorate: ["telephone-number"],
           validate: {
             presence: {
@@ -34,9 +37,9 @@
           }
         }) }}
 
-        
+
         {{ govukButton({
-          text: "Update telephone number"
+          text: "Review phone number"
         }) }}
       </form>
     </div>
