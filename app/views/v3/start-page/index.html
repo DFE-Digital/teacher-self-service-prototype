@@ -1,5 +1,4 @@
 {% extends "layouts/start-page.html" %}
-{% set serviceName = "" %}
 
 
 {% block beforeContent %}
@@ -35,7 +34,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <span class="govuk-caption-l">Guidance</span>
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Teacher self-service portal</h1>     
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-8">{{ serviceName }}</h1>     
         
         <p class="govuk-body-l">Find out how you can access your individual teacher record.</p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
@@ -56,40 +55,33 @@
         </li>
 
     </ul>
-    <section class="gem-c-devolved-nations govuk-!-margin-bottom-8"">
-        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
-          Applies to England
-        </h2>
-        <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-0">         
-            <li><a class="govuk-link" href="https://www.ewc.wales/site/index.php/en/registration/recognition-as-a-qualified-school-teacher-in-wales.html">Guidance for Wales</a></li>
-            <li><a class="govuk-link" href="https://www.gtcs.org.uk/GTCS-login.aspx">Guidance for Scotland</a></li>
-        </ul>
-    </section>
+
 
      <p class="govuk-body">
         Use this service to:
     </p>
     <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
         <li>
-            view your teacher record
+            view and download your teaching certificates
         </li>
         <li>
-            obtain electronic copies of your qualified teacher status (QTS), early years teacher status or induction certificates
-        </li>
-        <li>
-            obtain electronic copies of relevant leadership qualification certificates
+            check your qualification status
         </li>
         <li>
             update your personal details
         </li>
-        <li>
-            download a letter confirming your teacher qualifications
-        </li>
-        <li>
-            input your employment details
-        </li>
+
     </ul>
-    <h1 class="govuk-heading-m">Before you start</h1>
+    <section class="gem-c-devolved-nations govuk-!-margin-bottom-8"">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-0">
+            This service is for teachers in England
+        </h2>
+        <ul class="govuk-list govuk-!-margin-top-1 govuk-!-margin-bottom-0">         
+            <li><a class="govuk-link" href="https://www.ewc.wales/site/index.php/en/registration/applying-for-registration.html">Teachers in Wales</a></li>
+            <li><a class="govuk-link" href="https://www.gtcs.org.uk/GTCS-login.aspx">Teachers in  Scotland</a></li>
+        </ul>
+    </section>
+    <!-- <h1 class="govuk-heading-m">Before you start</h1>
     <ol class="steps govuk-list">
         <li>
             Make sure you have your teacher reference number (TRN) ready - this is usually on your payslip or pension statement. If you do not know your TRN you can use our <a href="https://www.gov.uk/guidance/teacher-reference-number-trn">a lost TRN service</a>.
@@ -97,7 +89,7 @@
         <li>
             Enter your TRN without the ‘RP’ letters or the slash (‘/’) symbol. Qualified teacher status (QTS), General Teaching Council (GTC), Department for Education (DfE), Department for Education and Skills (DfES) or Department for Children, Schools and Families (DCSF) numbers are the same as TRNs and can be entered as normal.
         </li>
-    </ol>
+    </ol> -->
     {{ govukButton({
         text: "Start now",
         href: "https://find-a-lost-trn-prototype.herokuapp.com/get-an-identity/email",
