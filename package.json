@@ -8,7 +8,7 @@
     "node": ">=16.0.0"
   },
   "prototype": {
-    "serviceName": "Manage your career in education",
+    "serviceName": "Access your teaching profile",
     "defaultRigLayout": "layouts/default.html"
   },
   "stylelint": {
@@ -36,7 +36,7 @@
     "rollup": "^2.74.1",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-scss": "^3.0.0",
-    "sass": "^1.52.1"
+    "sass": "^1.54.9"
   },
   "devDependencies": {
     "standard": "^17.0.0",
