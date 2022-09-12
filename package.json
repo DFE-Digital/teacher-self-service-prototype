@@ -8,7 +8,7 @@
     "node": ">=16.0.0"
   },
   "prototype": {
-    "serviceName": "Manage your career in education",
+    "serviceName": "Access your teaching profile",
     "defaultRigLayout": "layouts/default.html"
   },
   "stylelint": {
