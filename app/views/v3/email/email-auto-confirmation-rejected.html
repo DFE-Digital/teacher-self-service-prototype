@@ -5,7 +5,7 @@
 {% set to = "Sarah Jones <jane.jones123@gmail.com>" %}
 
 {% block content %}
-  <p>Dear Sarah,</p>
+  <p>Dear {{ data['first-name-initial'] }},</p>
   <p>We have not completed your request to update your name because:  </p>
   <ul class="govuk-list govuk-list--bullet">
     <li>the document you sent is not accepted </li>

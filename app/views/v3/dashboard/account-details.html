@@ -27,7 +27,7 @@
           {% if data['alert-type'] == "name-update" or data['alert-type'] == "dob-update"%}
               <p class="govuk-body">We'll review your request and get back to you within 5 working days.</p>
            {% endif %}
-              <p class="govuk-body">We've sent a confirmation of the request to <span class="govuk-!-font-weight-bold"></span>{{ data['email-address'] }}</p>e</p>
+              <p class="govuk-body">We've sent a confirmation of the request to <span class="govuk-!-font-weight-bold">{{ data['email-address'] | maskEmail }}</span></p></p>
         {% endset %}
 
 
@@ -50,7 +50,7 @@
       </nav>
 
       {% set nationalInsurance %}
-         {{ data['national-insurance'] }}
+         {{ data['national-insurance']| maskNationalInsurance }}
       {% endset %}
 
       {% set fullName %}
@@ -129,10 +129,10 @@
 
 
       {% set telephoneNumber %}
-      {{ data['telephone-number'] }}
+      {{ data['telephone-number']| maskPhoneNumber }}
       {% endset %}
       {% set emailAddress %}
-         {{ data['email-address'] }}
+        {{ data['email-address'] | maskEmail }}
       {% endset %}
       {{ xGovukSummaryCard({
         classes: "govuk-!-margin-bottom-5",
@@ -179,6 +179,7 @@
         });
 
       </script>
+      
       {% endblock %}
 
     </div>

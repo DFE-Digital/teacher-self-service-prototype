@@ -24,6 +24,37 @@ export default (env) => {
     return datetime.toFormat('d MMMM yyyy')
   }
 
+  filters.maskEmail = function (email) {
+    var split = email.split("@");
+    var split1 = split[0];
+    var avg = split1.length / 1;
+    
+    split1 = split1.substring(2, (split1.length - avg));
+    var split2 = split[1];
+    return split1 + "******@" + split2;
+}
+
+filters.maskPhoneNumber = function(phoneNumber){
+  var s = phoneNumber;
+  var start = 3;
+  var end = 2;
+
+  var result = s.slice(0, start);
+  result += "*".repeat(s.length-start-end);
+  result += s.slice(s.length-end);
+  return result;
+}
+filters.maskNationalInsurance = function(NationalInsurance){
+  var s = NationalInsurance;
+  var start = 2;
+  var end = 1;
+
+  var result = s.slice(0, start);
+  result += "*".repeat(s.length-start-end);
+  result += s.slice(s.length-end);
+  return result;
+}
+
   // stringify an object
   filters.stringify = obj => {
     return JSON.stringify(obj)

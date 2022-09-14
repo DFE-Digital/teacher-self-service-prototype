@@ -5,7 +5,7 @@
 {% set to = "Sarah Jones <jane.jones123@gmail.com>" %}
 
 {% block content %}
-  <p>Dear Sarah,</p>
+  <p>Dear {{ data['first-name-initial'] }},</p>
   <p>You have successfully updated your email address.</p>
   <p>If you did not update your email address, email us as soon as possible at:</p>
   <p><a href='mailto:QTS.enquiries@education.gov.uk'>QTS.enquiries@education.gov.uk</a></p>

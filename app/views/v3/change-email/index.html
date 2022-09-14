@@ -13,7 +13,7 @@
       <form action="confirmation" method="post" novalidate data-validate>
 
           <div class="govuk-inset-text">
-           Current email address: <span class="govuk-!-font-weight-bold">{{ data['email-address'] }}</span>
+           Current email address: <span class="govuk-!-font-weight-bold">{{ data['email-address'] | maskEmail}}</span>
           </div>
 
 
