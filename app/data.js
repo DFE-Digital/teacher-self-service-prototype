@@ -10,11 +10,11 @@ export default {
   // Set feature flags using the `features` key
   
   'email-address': 'owenbick1@hotmail.co.uk',
-  'date-of-birth-initial': { day: 31, month: 1, year: 1990 },
+  'date-of-birth-initial': { day: 31, month: 1, year: 1995 },
   'national-insurance': 'JL0034AD',
   'telephone-number': '07827 996 233',
-  'first-name-initial': 'Owen',
-  'last-name-initial': 'Bickmore',
+  'first-name-initial': 'Elizabeth',
+  'last-name-initial': 'Smith',
   'middle-name-initial': '',
   'date-of-birth': { day: 31, month: 1, year: 1995 },
 }
