@@ -13,7 +13,7 @@ export default {
   'date-of-birth-initial': { day: 31, month: 1, year: 1990 },
   'national-insurance': 'JL0034AD',
   'telephone-number': '07827 996 233',
-  'first-name-initial': 'Calvin',
+  'first-name-initial': 'Ho',
   'last-name-initial': 'Cheng',
   'middle-name-initial': '',
   'date-of-birth': { day: 31, month: 1, year: 1990 },
