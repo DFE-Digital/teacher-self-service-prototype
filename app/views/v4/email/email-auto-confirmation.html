@@ -1,0 +1,16 @@
+{% extends "layouts/email.html" %}
+
+{% set subject = "Update email" %}
+{% set from = "GOV.UK <teacher-self-serve@gov.uk>" %}
+{% set to = "Sarah Jones <jane.jones123@gmail.com>" %}
+
+{% block content %}
+  <p>Dear {{ data['first-name-initial'] }},</p>
+  <p>You have successfully updated your email address.</p>
+  <p>If you did not update your email address, email us as soon as possible at:</p>
+  <p><a href='mailto:QTS.enquiries@education.gov.uk'>QTS.enquiries@education.gov.uk</a></p>
+  <p>Kind regards</p>
+  <p>QTS and Induction team</p>
+  <p>Teacher Regulation Agency</p>
+
+{% endblock %}

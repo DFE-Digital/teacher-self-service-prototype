@@ -1,0 +1,50 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Update your phone number" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+      <form action="confirmation" method="post" novalidate data-validate>
+
+        <div class="govuk-inset-text">
+         Current phone number: <span class="govuk-!-font-weight-bold">{{ data['telephone-number'] | maskPhoneNumber}}</span>
+        </div>
+
+
+        {{ govukInput({
+          label: {
+            text: "Phone number",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "For international numbers include the country code"
+          },
+          id: "telephone-number",
+          name: "telephone-number",
+          type: "tel",
+          autocomplete: "tel",
+          value: "",
+          classes: "govuk-input--width-20",
+          decorate: ["telephone-number"],
+          validate: {
+            presence: {
+              message: "Enter a telephone number"
+            }
+          }
+        }) }}
+
+
+        {{ govukButton({
+          text: "Review phone number"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Update your name" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+      <form action="evidence" method="post" novalidate >
+
+
+        <p>If you’ve changed your name, you’ll need to provide evidence to update it. </p>
+
+        <p>First, tell us what you want to change your name to. Then continue to find out about and provide evidence for your name change.</p>
+
+        <div class="govuk-inset-text">
+            Current name: <span class="govuk-!-font-weight-bold"> {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}     </span>
+       </div>
+
+
+   
+
+
+
+        {{ govukInput({
+          label: {
+            text: "First names",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Or given names"
+          },
+          classes: "govuk-!-width-two-thirds",
+          autocomplete: "first-name",
+          spellcheck: false,
+          decorate: "first-name",
+          value: '',
+          validate: {
+            presence: {
+              message: "Enter your first name"
+            }
+          }
+        }) }}
+        
+        {{ govukInput({
+          label: {
+            text: "Middle names (optional)",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-!-width-two-thirds",
+          id: "middle-name",
+          name: "middle-name",
+          autocomplete: "middle-name",
+          value: '',
+          spellcheck: false
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last names",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Or family names"
+          },
+          classes: "govuk-!-width-two-thirds",
+          autocomplete: "first-name",
+          spellcheck: false,
+          decorate: "first-name",
+          id: "last-name",
+          value: '',
+          name: "last-name",
+
+          validate: {
+            presence: {
+              message: "Enter your last name"
+            }
+          }
+        }) }}
+
+
+
+
+        {{ govukButton({
+          text: "Provide your evidence"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Review National Insurance number" %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+      <form action="../dashboard/account-details" method="post" novalidate data-validate>
+        <input type="hidden" name="alert" id="alert" value="show">
+        <input type="hidden" name="alert-type" id="alert-type" value="ni-update">
+
+
+        {% set nationalInsurance %}
+        {{ data['national-insurance'] }}
+        {% endset %}
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "National insurance number"
+              },
+              value: {
+                html: nationalInsurance
+              },
+              actions: {
+                items: [
+                  {
+                    href: "index",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+
+        {{ govukButton({
+          text: "Update National Insurance number"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

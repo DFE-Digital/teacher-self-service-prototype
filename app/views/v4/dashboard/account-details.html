@@ -1,0 +1,188 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Teacher self-service account" %}
+{% set emailAddress = data['email-address'] or 'email@example.com' %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      {% if data['alert'] == "show" %}
+
+        {% set alertMessage %}
+          <h3 class="govuk-notification-banner__heading">
+            {% if data['alert-type'] == "ni-update" %}
+                National Insurance number updated
+            {% elseif data['alert-type'] == "telephone-update" %}
+                Phone number updated
+            {% elseif data['alert-type'] == "email-update" %}
+               Email address updated
+            {% elseif data['alert-type'] == "name-update" %}
+               Name update sent
+            {% elseif data['alert-type'] == "dob-update" %}
+               Date of birth update sent
+             {% endif %}
+          </h3>
+
+          {% if data['alert-type'] == "name-update" or data['alert-type'] == "dob-update"%}
+              <p class="govuk-body">We'll review your request and get back to you within 5 working days.</p>
+           {% endif %}
+              <p class="govuk-body">We've sent a confirmation of the request to <span class="govuk-!-font-weight-bold">{{ data['email-address'] | maskEmail }}</span></p></p>
+        {% endset %}
+
+
+        {{ govukNotificationBanner({
+          html: alertMessage,
+          type: 'success'
+        }) }}
+      {% endif %}
+
+      {% include "includes/header.html" %}
+      <nav class="app-sub-navigation">
+        <ul class="app-sub-navigation__list">
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link"  href="index?alert=hide">Qualifications</a>
+              </li>
+              <li class="app-sub-navigation__item">
+                <a class="app-sub-navigation__link" aria-current="page" href="#">Account details</a>
+              </li>
+          </ul>
+      </nav>
+
+      {% set nationalInsurance %}
+         {{ data['national-insurance']| maskNationalInsurance }}
+      {% endset %}
+
+      {% set fullName %}
+
+      {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
+         {% if data['name-change-lozenge'] == "show" %}
+            {{govukTag({
+              text: "Pending review",
+              classes: "govuk-tag--yellow"
+            })}}
+        {% endif %}
+      {% endset %}
+
+      {% set fullDob %}
+
+          {{ data['date-of-birth-initial'] | dateWithYear }} 
+            
+
+         {% if data['dob-change-lozenge'] == "show" %}
+            {{govukTag({
+              text: "Pending review",
+              classes: "govuk-tag--yellow"
+            })}}
+        {% endif %}
+      {% endset %}
+
+
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "Personal details",
+
+        rows: [{
+          key: {
+            html: "Full name"
+          },
+          value: {
+            html: fullName
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "Change name",
+              href: "../change-name/index"
+            }]
+          }
+        }, {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            html: fullDob
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "change date of birth",
+              href: "../change-dob/index"
+            }]
+          }
+        }, {
+          key: {
+            text: "National Insurance number"
+          },
+          value: {
+            html: nationalInsurance
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "change National Insurance Number",
+              href: "../change-national-insurance/index"
+            }]
+          }
+        }]
+      }) }}
+
+
+      {% set telephoneNumber %}
+      {{ data['telephone-number']| maskPhoneNumber }}
+      {% endset %}
+      {% set emailAddress %}
+        {{ data['email-address'] | maskEmail }}
+      {% endset %}
+      {{ xGovukSummaryCard({
+        classes: "govuk-!-margin-bottom-5",
+        titleText: "Contact details",
+
+        rows: [{
+          key: {
+            html: "Email address"
+          },
+          value: {
+            html: emailAddress
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "Change email address",
+              href: "../change-email/index"
+            }]
+          }
+        }, {
+          key: {
+            text: "Phone number"
+          },
+          value: {
+            html: telephoneNumber
+          },
+          actions: {
+            items: [{
+              text: "Change",
+              visuallyHiddenText: "change telephone number",
+              href: "../change-telephone/index"
+            }]
+          }
+        }]
+      }) }}
+      {% block pageScripts %}
+      <script>
+        $.post( "/alert", { alert: "hide" } );
+
+        $(function() {
+            $("a").attr('href', function(i, h) {
+             return h + (h.indexOf('?') != -1 ? "&alert=hide" : "?alert=hide");
+          });
+        });
+
+      </script>
+      
+      {% endblock %}
+
+    </div>
+  </div>
+
+{% endblock %}

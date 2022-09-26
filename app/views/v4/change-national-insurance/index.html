@@ -1,0 +1,46 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Update your National Insurance number" %}
+
+{% block pageNavigation %}
+{% include "includes/back.html" %}
+{% endblock %}
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+      <form action="confirmation" method="post" novalidate data-validate>
+
+        <div class="govuk-inset-text">
+         Current National Insurance number: <span class="govuk-!-font-weight-bold">{{ data['national-insurance'] | maskNationalInsurance }}</span>
+        </div>
+
+
+        {{ govukInput({          
+          label: {
+          text: "National insurance number",
+          classes: "govuk-label--s"
+        },
+          classes: "govuk-input--width-10",
+          id: "national-insurance",
+          name: "national-insurance",
+          value: "",
+          decorate: ["national-insurance"],
+          validate: {
+            presence: {
+              message: "Enter a valid national insurance number"
+            }
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Review National Insurance number"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

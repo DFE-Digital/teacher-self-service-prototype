@@ -27,22 +27,78 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <p class="govuk-heading-m">Version 3 (23 August 2022)</p>
+
+
+
+            <!-- Version 4 - design history -->
+
+      <p class="govuk-heading-m">Version 4 (26 Sept 2022)</p>
       {% set changes %}
-        <ul class="govuk-list govuk-list--number ">
-          <li>New confirmation page flow after editing personal details</li>
-          <li>Name and DOB have seperate screens for evidence</li>
-          <li>Generic copy of start page and sign in created</li>
-          <li>Addition of age range in Initial teacher training (ITT) column</li>
-          <li>Employment history tab and content based on teachers pension data</li>
+        <p class="govuk-heading-s">General</p>
+        <ul class="govuk-list govuk-list--bullet ">
+          <li></li>
+         
         </ul>
+       
       {% endset %}
 
       {{ govukDetails({
         summaryText: "V3 changes include",
         html: changes
       }) }}
+      
+      
 
+      <p class="govuk-heading-s">V3 Screens</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href='v4/start-page/index'>Gov start page</a></li>
+        <li><a href='https://find-a-lost-trn-prototype.herokuapp.com/get-an-identity/email'>Sign-in</a></li>
+        <li><a href='v4/dashboard/index'>Dashboard -Qualifications</a></li>
+        <li><a href='v4/dashboard/account-details'>Dashboard - Account details</a></li>
+        <li><a href="v4/change-name/index">Change name</a></li>
+        <li><a href="v4/change-dob/index">Change date of birth</a></li>
+        <li><a href="v4/change-telephone/index">Change phone number</a></li>
+        <li><a href="v4/change-email/index">Change email address</a></li>
+        <li><a href="v4/change-national-insurance/index">Change National Insurance number</a></li>
+      </ul>
+      <p><a href="edit-data">Change prototype data</a></p>
+
+      <p class="govuk-heading-s">Emails sent from service</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="v4/email/email-auto-confirmation.html">Auto confirmation (Email, Phone, NI)</a></li>
+          <li><a href="v4/email/email-auto-confirmation-awaiting.html">Auto confirmation (Name, D.O.B)</a></li>
+          <li><a href="v4/email/email-auto-confirmation-rejected.html">Email changes rejection (Name. D.O.B)</a></li>
+          <li><a href="v4/email/email-auto-confirmation-accepted.html">Email changes accepted (Name. D.O.B)</a></li>
+        </ul>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+      <p class="govuk-heading-m">Previous work</p>
+
+      <!-- Version 2 - design history -->
+      <p >Earlier iterations of the teacher self-serve. Includes links to research and findings</p>
+      {% set version3 %}
+      <p class="govuk-heading-s">Version 3 changes </p>
+
+      <p>General</p>
+      <ul class="govuk-list govuk-list--bullet ">
+        <li>Start page for service</li>
+        <li>Integration of GAI journey from register for NPQ</li>
+        <li>Service renamed to Access teaching profile</li>
+      </ul>
+      <p>Qualifications</p>
+      <ul class="govuk-list govuk-list--bullet ">
+        <li>Addition of age range in Initial teacher training (ITT) column</li>
+        <li>Inclusion of induction table</li>
+      </ul>
+
+      <p>Change details</p>
+      <ul class="govuk-list govuk-list--bullet ">
+        <li>New confirmation page flow after editing personal details</li>
+        <li>Name and DOB have seperate screens for evidence</li>
+      </ul>
       <p class="govuk-heading-s">V3 Screens</p>
 
       <ul class="govuk-list govuk-list--bullet">
@@ -66,13 +122,9 @@
           <li><a href="v3/email/email-auto-confirmation-rejected.html">Email changes rejection (Name. D.O.B)</a></li>
           <li><a href="v3/email/email-auto-confirmation-accepted.html">Email changes accepted (Name. D.O.B)</a></li>
         </ul>
-      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+      {% endset %}
 
-
-      <p class="govuk-heading-m">Previous work</p>
-
-      <!-- Version 2 - design history -->
-      <p >Earlier iterations of the teacher self-serve. Includes links to research and findings</p>
+     
       {% set version2 %}
       <p class="govuk-heading-s">Version 2 changes </p>
       <ul class="govuk-list govuk-list--number ">
@@ -118,6 +170,10 @@
           <li><a href="v1/change-national-insurance/index">Change National Insurance number</a></li>
         </ul>
       {% endset %}
+      {{ govukDetails({
+        summaryText: "Version 3 (23 Aug 2022)",
+        html: version3
+      }) }}
       {{ govukDetails({
         summaryText: "Version 2 (4 Aug 2022)",
         html: version2

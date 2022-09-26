@@ -1,0 +1,72 @@
+{% extends "layouts/default.html" %}
+
+{% set title = "Review date of birth update " %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-l">{{ title }} </h1>
+
+      <form action="../dashboard/account-details" method="post" novalidate data-validate>
+        <input type="hidden" name="alert" id="alert" value="show">
+        <input type="hidden" name="alert-type" id="alert-type" value="dob-update">
+        <input type="hidden" name="dob-change-lozenge" id="dob-change-lozenge" value="show">
+
+        {% set dateOfBirth %}
+          {{ data['date-of-birth']['day'] }}  {{ data['date-of-birth']['month'] }} {{ data['date-of-birth']['year'] }}
+        {% endset %}
+        {% set evidenceFile %}
+          {{ data['file-upload-2'] }}
+        {% endset %}
+
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text:  data['date-of-birth'] | dateWithYear
+              },
+              actions: {
+                items: [
+                  {
+                    href: "index",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Evidence"
+              },
+              value: {
+                html: evidenceFile
+              },
+              actions: {
+                items: [
+                  {
+                    href: "evidence",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        {{ govukInsetText({
+          html: "<p>We'll email you to confirm the update or let you know if there's a problem.</p> <p>This can take up to 5 days. Your certicates will be changed as soon as the update is confirmed</p>"
+        }) }}
+        {{ govukButton({
+          text: "Submit update"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

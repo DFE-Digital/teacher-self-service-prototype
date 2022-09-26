@@ -1,0 +1,16 @@
+{% extends "layouts/email.html" %}
+
+{% set subject = "Request approved" %}
+
+{% block content %}
+  <p>Dear {{ data['first-name-initial'] }},</p>
+  <p>We’ve approved your request to update your name in your teaching profile.</p>
+  <p>You can access your teaching profile and download or print your updated certificates:</p>
+  <p><a href='../start-page/index'>https://your.teacher.profile.education.gov.uk/start</a></p>
+  <p>If you have any questions, email us at:</p>
+  <p><a href='mailto:QTS.enquiries@education.gov.uk'>QTS.enquiries@education.gov.uk</a></p>
+  <p>Kind regards</p>
+  <p>QTS and Induction team</p>
+  <p>Teacher Regulation Agency</p>
+
+{% endblock %}
