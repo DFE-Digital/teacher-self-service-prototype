@@ -9,12 +9,12 @@
 export default {
   // Set feature flags using the `features` key
   
-  'email-address': 'liamkeast@outlook.com',
+  'email-address': 'gabrionorati@gmail.com',
   'date-of-birth-initial': { day: 31, month: 1, year: 1990 },
   'national-insurance': 'JL0034AD',
   'telephone-number': '07827 996 233',
-  'first-name-initial': 'Liam',
-  'last-name-initial': 'Keast',
+  'first-name-initial': 'Gabriella',
+  'last-name-initial': 'Onorati',
   'middle-name-initial': '',
   'date-of-birth': { day: 31, month: 1, year: 1995 },
 }
