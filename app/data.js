@@ -10,11 +10,10 @@ export default {
   // Set feature flags using the `features` key
   
   'email-address': 'sarahjones@gmail.com',
-  'date-of-birth-initial': { day: 31, month: 1, year: 1975 },
+  'date-of-birth': { day: 31, month: 1, year: 1975 },
   'national-insurance': 'JL0034AD',
   'telephone-number': '07827 996 233',
-  'first-name-initial': 'Sarah',
-  'last-name-initial': 'Jones',
+  'first-name': 'Sarah',
+  'last-name': 'Jones',
   'middle-name-initial': '',
-  'date-of-birth': { day: 31, month: 1, year: 1995 },
 }

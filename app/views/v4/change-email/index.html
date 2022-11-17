@@ -12,21 +12,16 @@
       <h1 class="govuk-heading-l">{{ title }} </h1>
       <form action="confirmation" method="post" novalidate data-validate>
 
-          <div class="govuk-inset-text">
-           Current email address: <span class="govuk-!-font-weight-bold">{{ data['email-address'] | maskEmail}}</span>
-          </div>
-
 
 
         {{ govukInput({
           label: {
-            text: "Email address",
+            text: "",
             classes: "govuk-label--s"
           },
           autocomplete: "email-address",
           spellcheck: false,
           type: "email",
-          value:'',
           decorate: "email-address",
           validate: {
             presence: {

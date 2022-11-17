@@ -13,14 +13,12 @@
 
       <form action="confirmation" method="post" novalidate data-validate>
 
-        <div class="govuk-inset-text">
-         Current phone number: <span class="govuk-!-font-weight-bold">{{ data['telephone-number'] | maskPhoneNumber}}</span>
-        </div>
+
 
 
         {{ govukInput({
           label: {
-            text: "Phone number",
+            text: "",
             classes: "govuk-label--s"
           },
           hint: {
@@ -30,7 +28,7 @@
           name: "telephone-number",
           type: "tel",
           autocomplete: "tel",
-          value: "",
+
           classes: "govuk-input--width-20",
           decorate: ["telephone-number"],
           validate: {

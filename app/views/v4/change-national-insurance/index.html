@@ -15,21 +15,16 @@
 
       <form action="confirmation" method="post" novalidate data-validate>
 
-        <div class="govuk-inset-text">
-         Current National Insurance number: <span class="govuk-!-font-weight-bold">{{ data['national-insurance'] | maskNationalInsurance }}</span>
-        </div>
 
 
         {{ govukInput({          
           label: {
-          text: "National insurance number",
+          text: "",
           classes: "govuk-label--s"
         },
           classes: "govuk-input--width-10",
-          id: "national-insurance",
-          name: "national-insurance",
-          value: "",
-          decorate: ["national-insurance"],
+
+          decorate: "national-insurance",
           validate: {
             presence: {
               message: "Enter a valid national insurance number"

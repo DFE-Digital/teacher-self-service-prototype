@@ -55,7 +55,7 @@
 
       {% set fullName %}
 
-      {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}    
+      {{ data['first-name'] }} {{ data['middle-name'] }} {{ data['last-name'] }}    
          {% if data['name-change-lozenge'] == "show" %}
             {{govukTag({
               text: "Pending review",
@@ -66,7 +66,7 @@
 
       {% set fullDob %}
 
-          {{ data['date-of-birth-initial'] | dateWithYear }} 
+          {{ data['date-of-birth'] | dateWithYear }} 
             
 
          {% if data['dob-change-lozenge'] == "show" %}

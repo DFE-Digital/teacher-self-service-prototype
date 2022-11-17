@@ -18,13 +18,6 @@
 
         <p>First, tell us what you want to change your name to. Then continue to find out about and provide evidence for your name change.</p>
 
-        <div class="govuk-inset-text">
-            Current name: <span class="govuk-!-font-weight-bold"> {{ data['first-name-initial'] }} {{ data['middle-name-initial'] }} {{ data['last-name-initial'] }}     </span>
-       </div>
-
-
-   
-
 
 
         {{ govukInput({
@@ -39,7 +32,6 @@
           autocomplete: "first-name",
           spellcheck: false,
           decorate: "first-name",
-          value: '',
           validate: {
             presence: {
               message: "Enter your first name"
@@ -56,7 +48,6 @@
           id: "middle-name",
           name: "middle-name",
           autocomplete: "middle-name",
-          value: '',
           spellcheck: false
         }) }}
 
@@ -71,9 +62,8 @@
           classes: "govuk-!-width-two-thirds",
           autocomplete: "first-name",
           spellcheck: false,
-          decorate: "first-name",
+          decorate: "last-name",
           id: "last-name",
-          value: '',
           name: "last-name",
 
           validate: {
